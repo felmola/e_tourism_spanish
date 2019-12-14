@@ -2,34 +2,37 @@
 {% load otree static %}
 
 {% block title %}
-    FIRST PART
+    PRIMERA PARTE
 {% endblock %}
 
 {% block content %}
 
-    <p>In this part, there will be a market for tourist packages. The market has a total of 5 negotiation rounds. Before
-        starting the first negotiation round, the computer will randomly assign you to one of two roles: either
-        buyer or seller. Keep in mind that the role to which you were assigned will be maintained during
-        the 5 negotiation rounds.</p>
+    <p>En esta parte se llevará a cabo un mercado de paquetes turísticos. El mercado tiene en total 5 periodos de
+        negociación. Antes de iniciar con el primer periodo de negociación, el computador lo asignará de manera
+        aleatoria a uno de dos roles: el rol de comprador o el rol de vendedor. Tenga en cuenta que el rol al que fue
+        asignado se mantendrá durante los 5 periodos de negociación.</p>
 
-    <p>The objective of the market is that buyers and sellers can negotiate and eventually complete transactions
-        successfully in each of the negotiation rounds. The results of the transactions will affect your final payment.</p>
+    <p>El objetivo del mercado es que compradores y vendedores puedan negociar y eventualmente logren completar
+        transacciones de manera exitosa en cada uno de los periodos de negociación. Los resultados de las transacciones
+        afectarán su pago final.</p>
 
-    <p>In this market each commodity is a tourist package. In total there are 5 types of tourist packages whose only
-        difference will be the destination: Berlin, Madrid, Vienna, Paris and Rome.</p>
+    <p>En este mercado, cada mercancía es un paquete turístico. En total hay 5 tipos de paquetes turísticos cuya única
+        diferencia será el destino: Berlín, Madrid, Viena, Paris y Roma.</p>
 
-    <p>In each of the negotiation rounds, first the sellers will set prices to the packages they will sell and then the
-        buyers will see a list containing the packages available in the market and the prices of each of these packages.
-        To complete a transaction, buyers must select the package of their preference and purchase it. Bare in mind, that if two buyers
-        pick the same package, the fastest one will be the one who gets to complete the transaction.</p>
+    <p>En cada uno de los periodos de negociación, primero los vendedores fijarán unos precios a los paquetes turísticos
+        que ellos venderán y después los compradores verán una lista que contendrá los paquetes disponibles en el
+        mercado y los precios de cada uno de estos paquetes. Para completar una transacción, los compradores deberán
+        seleccionar el paquete de su preferencia y comprarlo. Tenca en cuenta que si dos compradores escogen el mismo
+        paquete, aquel que lo haga mas rápido será el que complete la transacción./p>
 
-    <p>Before starting, both sellers and buyers will have an initial endowment of {{Constants.endowment}} (Unidades Monetarias Experimentales) in
-        each of the trading rounds to make their decisions. The payoff you will see after each of the trading rounds will
-        consider both the initial endowment and the earnings from your decisions
+    <p>Antes de iniciar, tanto vendedores como compradores tendrán una dotación inicial de {{Constants.endowment}}
+    (Unidades Monetarias Experimentales) en cada uno de los periodos de negociación para que tomen sus decisiones.
+    El pago que usted verá después de cada una de las rondas de negociación considerará ambos su dotación inicial y las
+    ganancias que obtenga por sus decisiones.
     </p>
 
-    <p>Please click on the "Next" button to start the first round of negotiation.</p>
+    <p>Por favor de clic en el botón “Siguiente” para iniciar con los periodos de negociación.</p>
 
-<button class="otree-btn-next btn btn-primary next-button otree-next-button"Siguiente/button>
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">Siguiente</button>
 
 {% endblock %}
