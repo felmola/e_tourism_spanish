@@ -72,7 +72,7 @@ $(document).ready(function() {
             {% for pac, val in pac_val.items %}
             <tr>
                 <td> {{pac.1}}</td>
-                <td>{{ val }} ECU</td>
+                <td>{{ val }} UME</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -113,7 +113,7 @@ $(document).ready(function() {
                             <h5 class="card-title">{{p.ask_price_fin|c}} </h5>
                             {% elif p.com_practice == 4 %}
                             <h5 class="card-title">
-                               {{ p.drip|c}} <a href = # data-toggle="tooltip" title = "Total Price = {{p.drip|c}} + 1 ECU  ={{p.ask_price_fin}} " data-original-title="Default tooltip">*</a>
+                               {{ p.drip|c}} <a href = # data-toggle="tooltip" title = "Total Price = {{p.drip|c}} + 1 UME  ={{p.ask_price_fin}} " data-original-title="Default tooltip">*</a>
                             </h5>
                             {% else %}
                             <h5 class="card-title">{{p.ask_price_fin}} </h5>
@@ -133,10 +133,10 @@ $(document).ready(function() {
         page.</p>
 
     <p>If at least 3 buyers report the same seller for using a commercial practice untruthfully, the seller will have
-        to pay a fine. This fine will be 6 ECU plus 2 ECU for each additional buyer who reports it. The amount of
+        to pay a fine. This fine will be 6 UME plus 2 UME for each additional buyer who reports it. The amount of
         the fine will be divided equally among the buyers who reported the seller.</p>
 
-    <p> Would you like to report a seller? Reporting will cost you 1 ECU that will be deducted from your initial
+    <p> Would you like to report a seller? Reporting will cost you 1 UME that will be deducted from your initial
     endowment </p>
     <div class = "form-inline">{{form.report}} </div>
 
