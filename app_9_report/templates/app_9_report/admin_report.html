@@ -1,0 +1,46 @@
+<style style="text/css">
+  	.table-responsive{
+		width:100%;
+		border-collapse:collapse;
+	}
+	.table-responsive tr{
+		background: #ffffff ;
+	}
+	/* Define the hover highlight color for the table row */
+    .table-responsive tr:hover {
+          background-color: #ffff99;
+    }
+</style>
+
+<div class="table-responsive">
+    <table class="table table-sm" style="max-width:970px; font-size: 12px">.
+        <tr>
+            <th class="bg-secondary"></th>
+            <th class="bg-secondary"></th>
+            <th class="bg-secondary"></th>
+            <th class="bg-primary"></th>
+            <th class="bg-primary"></th>
+            <th class="bg-primary"></th>
+        </tr>
+        <tr>
+            <th>P_code</th>
+            <th>Consent Name</th>
+            <th>ID Number</th>
+            <th>Market<br>Agent_role</th>
+            <th>Market<br>Paying Round</th>
+            <th>Market<br>Payoff Final</th>
+        </tr>
+        {% for row in table_rows %}
+        <tr>
+            <td>{{ row.participant_code }}</td>
+            <td>{{ row.consent_name }}</td>
+            <td>{{ row.consent_id_number }}</td>
+            <td>{{ row.market_agent_role }}</td>
+            <td>{{ row.market_paying_round }}</td>
+            <td>{{ row.market_payoff_final }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+Notes:
