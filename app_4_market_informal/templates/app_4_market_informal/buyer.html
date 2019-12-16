@@ -3,7 +3,7 @@
 
 {% block title %}
 
-    Decision of the buyer (Period {{ subsession.round_number }} of {{ Constants.num_rounds }}))
+    Decisión del comprador (Periodo {{ subsession.round_number }} de {{ Constants.num_rounds }}))
 {% endblock %}
 
 {% block content %}
@@ -53,41 +53,41 @@ $(document).ready(function() {
 }
 </style>
 
- <p>In the following table you will be able to see each one of the packages with its respective private valuation.</p>
+ <p>En la siguiente tabla usted podrá ver cada uno de los paquetes con su respectiva valoración privada.</p>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Package</th>
-                <th scope="col">Value</th>
+                <th scope="col">Paquete</th>
+                <th scope="col">Valoración</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Your ID is</td>
+                <td>Su código de comprador  es:</td>
                 <td>{{ player.id_in_group }}</td>
             </tr>
             <tr>
-                <td colspan="2"><b>Private valuations for packages</b></td>
+                <td colspan="2"><b>Valoraciones privadas para los paquetes</b></td>
             </tr>
             {% for pac, val in pac_val.items %}
             <tr>
                 <td> {{pac.1}}</td>
-                <td>{{ val }} UME</td>
+                <td>{{ val }} ECU</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    <p>On this page you will be able to see the complete list of package offers with their respective prices. Remember,
-        in order to purchase a package, it must be priced lower than or equal to the private value you received for that
-        package or the transaction will be canceled.</p>
+    <p>En esta página usted podrá ver la lista completa de ofertas de paquetes con sus respectivos precios. Recuerde que
+        , para poder comprar un paquete, este debe tener un precio menor que la valoración privada que usted recibió
+        para ese paquete o la transacción se anulará.</p>
 
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Seller ID</th>
-                <th scope="col">Offer</th>
+                <th scope="col">Código del vendedor</th>
+                <th scope="col">Oferta</th>
             </tr>
         </thead>
         <tbody>
@@ -119,7 +119,7 @@ $(document).ready(function() {
                             <h5 class="card-title">{{p.ask_price_fin}} </h5>
                             {% endif %}
                             <hr class="my-4">
-                            <button name = "my_seller" value = {{p.id_in_group}} class = "btn btn-primary btn-large">Precio de referencia</button>
+                            <button name = "my_seller" value = {{p.id_in_group}} class = "btn btn-primary btn-large">Comprar</button>
                         </div>
                     </div>
                 </td>
@@ -128,19 +128,19 @@ $(document).ready(function() {
         </tbody>
         </table>
 
-    <p>Remember that you have the ability to report the untruthful use of práctica comercials by a seller. If you
-        believe that a seller has used the práctica comercials untruthfully, please check that seller on the next
-        page.</p>
+    <p>Recuerde que usted tiene la posibilidad de reportar el uso no verídico de prácticas comerciales por parte de
+        algún vendedor. Si considera que algún vendedor ha hecho uso de las prácticas comerciales de manera no verídica,
+        por favor anote su número identificador ya que en la siguiente página se lo pediremos.</p>
 
-    <p>If at least 3 buyers report the same seller for using a práctica comercial untruthfully, the seller will have
-        to pay a fine. This fine will be 6 UME plus 2 UME for each additional buyer who reports it. The amount of
-        the fine will be divided equally among the buyers who reported the seller.</p>
+    <p>Si al menos 3 compradores reportan a un mismo vendedor por haber usado alguna práctica comercial de manera no
+        verídica, el vendedor deberá pagar una multa. Esta multa será de 6 UME más 2 UME por cada comprador adicional
+        que lo reporte. El monto de la multa será dividido de manera equitativa entre los compradores que reportaron
+        al vendedor.</p>
 
-    <p> Would you like to report a seller? Reporting will cost you 1 UME that will be deducted from your initial
-    endowment </p>
+    <p>¿Le gustaría reportar a un vendedor? Reportar le costará a usted 1 UME que será deducida de su dotación inicial </p>
     <div class = "form-inline">{{form.report}} </div>
 
-    <p>Once you click on the "Buy" button, you will be see the next page where you can report a seller if you chose to.</p>
+    <p>Una vez de clic en el botón “Comprar” se calculará su pago para este periodo de negociación.</p>
 
 {{ form.my_seller.errors }}
 

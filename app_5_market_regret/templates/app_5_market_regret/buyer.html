@@ -3,7 +3,7 @@
 
 {% block title %}
 
-    Decision of the buyer (Period {{ subsession.round_number }} of {{ Constants.num_rounds }}))
+    Decisión del comprador (Periodo {{ subsession.round_number }} de {{ Constants.num_rounds }}))
 {% endblock %}
 
 {% block content %}
@@ -47,41 +47,41 @@ $(document).ready(function() {
 }
 </style>
 
- <p>In the following table you will be able to see each one of the packages with its respective private valuation.</p>
+ <p>En la siguiente tabla usted podrá ver cada uno de los paquetes con su respectiva valoración privada.</p>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Package</th>
-                <th scope="col">Value</th>
+                <th scope="col">Paquete</th>
+                <th scope="col">Valoración</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Your ID is</td>
+                <td>Su código de comprador  es:</td>
                 <td>{{ player.id_in_group }}</td>
             </tr>
             <tr>
-                <td colspan="2"><b>Private valuations for packages</b></td>
+                <td colspan="2"><b>Valoraciones privadas para los paquetes</b></td>
             </tr>
             {% for pac, val in pac_val.items %}
             <tr>
                 <td> {{pac.1}}</td>
-                <td>{{ val }} UME</td>
+                <td>{{ val }} ECU</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    <p>On this page you will be able to see the complete list of package offers with their respective prices. Remember,
-        in order to purchase a package, it must be priced lower than or equal to the private value you received for that
-        package or the transaction will be canceled.</p>
+    <p>En esta página usted podrá ver la lista completa de ofertas de paquetes con sus respectivos precios. Recuerde que
+        , para poder comprar un paquete, este debe tener un precio menor que la valoración privada que usted recibió
+        para ese paquete o la transacción se anulará.</p>
 
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Seller ID</th>
-                <th scope="col">Offer</th>
+                <th scope="col">Código del vendedor</th>
+                <th scope="col">Oferta</th>
             </tr>
         </thead>
         <tbody>
@@ -124,7 +124,7 @@ $(document).ready(function() {
         </tbody>
         </table>
 
-    <p>Once you click on the "Buy" button your payment will be calculated for this trading round.</p>
+    <p>Una vez de clic en el botón “Comprar” se calculará su pago para este periodo de negociación.</p>
 
     {% next_button %}
 
