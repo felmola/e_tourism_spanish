@@ -49,13 +49,13 @@
     </tbody>
 </table>
     {% else %}
-            <p>Usted se demoró mucho en tomar una decisión. Por esta razón, sus ganancias en esta ronda de negociación son de 0 UME.<br> </p>
+            <p>Usted se demoró mucho en tomar una decisión. Por esta razón, sus ganancias en este periodo de negociación son de 0 UME.<br> </p>
     {% endif %}
 {% else %}
             {% if player.sold == False %}
-            Usted no pudo vender su paquete. Por esta razón, sus ganancias para esta ronda de negociación son de {{player.payoff |c}}.
+            Usted no pudo vender su paquete. Por esta razón, sus ganancias para este periodo de negociación son de {{player.payoff |c}}.
             {% else %}
-            Usted pudo vender su paquete. Por esta razón, sus ganancias para esta ronda de negociación son de {{player.payoff |c}}
+            Usted pudo vender su paquete. Por esta razón, sus ganancias para este periodo de negociación son de {{player.payoff |c}}
             {% endif %}
             You were reported {{ player.times_reported }} times.
 
