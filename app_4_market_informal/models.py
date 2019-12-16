@@ -23,7 +23,7 @@ Markets
 
 class Constants(BaseConstants):
     name_in_url = 'app_4_informal'
-    players_per_group = 2
+    players_per_group = 20
     num_rounds = 5
     endowment = 25
     see_list_cost = 1

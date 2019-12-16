@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    SUMMARY
+    Resumen de la actividad del día de hoy
 {% endblock %}
 
 {% block content %}
@@ -10,24 +10,23 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col" colspan="2">Results from the activity</th>
-                <th scope="col"></th>
+                <th scope="col" colspan="2">Resultados de la actividad</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>The trading round sorted for payment was:</td>
+                <td>El periodo de negociación sorteado para pago es:</td>
                 <td>{{ paying_round }}</td>
             </tr>
             <tr>
-                <td>Your payoff (including the initial endowment of {{ endowment }} UME) is:</td>
+                <td>Su pago (incluyendo la dotación inicial de {{ endowment }} UME) es:</td>
                 <td>{{ payoff_final }}</td>
             </tr>
         </tbody>
     </table>
 
     <p>
-    Please click on the "Next" button to continue with the questionnaire.
+    Por favor de clic en el botón "Siguente" para continuar con el cuestionario.
     </p>
 
     {% next_button %}

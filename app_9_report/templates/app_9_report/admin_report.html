@@ -21,6 +21,7 @@
             <th class="bg-primary"></th>
             <th class="bg-primary"></th>
             <th class="bg-primary"></th>
+            <th class="bg-warning"></th>
         </tr>
         <tr>
             <th>P_code</th>
@@ -29,6 +30,7 @@
             <th>Market<br>Agent_role</th>
             <th>Market<br>Paying Round</th>
             <th>Market<br>Payoff Final</th>
+            <th>Market<br>Payoff Euro</th>
         </tr>
         {% for row in table_rows %}
         <tr>
@@ -37,7 +39,8 @@
             <td>{{ row.consent_id_number }}</td>
             <td>{{ row.market_agent_role }}</td>
             <td>{{ row.market_paying_round }}</td>
-            <td>{{ row.market_payoff_final }}</td>
+            <td>{{ row.market_payoff_final }} UME</td>
+            <td>{{ row.market_payoff_euro }} Euros</td>
         </tr>
         {% endfor %}
     </table>

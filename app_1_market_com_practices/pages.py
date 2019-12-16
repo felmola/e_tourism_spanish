@@ -93,6 +93,8 @@ class Results(Page):
     def vars_for_template(self):
         self.group.set_payoff()
         self.group.who_purchased()
+        if self.player.round_number == Constants.num_rounds:
+            self.player.payoff_final_f()
 
         return dict(
             role = self.participant.vars['role'],
