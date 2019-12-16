@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    Decision of the seller (Period {{ subsession.round_number }} of {{ Constants.num_rounds }})
+    Decisión del vendedor (Periodo {{ subsession.round_number }} de {{ Constants.num_rounds }})
 {% endblock %}
 
 {% block content %}
@@ -36,13 +36,13 @@
     </table>
 
 
-    <p>Additionally, you can choose a commercial practice to help you make your package more attractive in the market. There
-        are three commercial practices available that sellers will be able to use for this purpose.</p>
+    <p>Additionally, you can choose a práctica comercial to help you make your package more attractive in the market. There
+        are three práctica comercials available that sellers will be able to use for this purpose.</p>
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Commercial Practice</th>
+                <th scope="col">Práctica comercial</th>
                 <th scope="col">Definition</th>
                 <th scope="col">Example</th>
             </tr>
@@ -50,15 +50,15 @@
         <tbody>
             <tr>
                 <th scope="row">Mejor precio garantizado</th>
-                <td>This commercial practice allows you to make the announcement that, among all packages with the same
+                <td>This práctica comercial allows you to make the announcement that, among all packages with the same
                     destination, this one has the lowest price.</td>
                 <td>Suppose you offer the package to Roma. There may be other sellers in the market selling the same
-                    package to Roma, but if you opt for this commercial practice, you would be saying that, of all the
+                    package to Roma, but if you opt for this práctica comercial, you would be saying that, of all the
                     packages to Roma, yours is the cheapest.</td>
             </tr>
             <tr>
                 <th scope="row">ReferencePricing </th>
-                <td>This commercial practice allows you to make the announcement that between the first price you
+                <td>This práctica comercial allows you to make the announcement that between the first price you
                     proposed and the end, you offered a discount.</td>
                 <td>Suppose you offer a package to Roma. You can claim that you made a discount between the first price
                     you bid of 60 UME and the final (the one you confirmed after deciding whether or not to observe the
@@ -66,24 +66,24 @@
             </tr>
             <tr>
                 <th scope="row">Drip pricing</th>
-                <td>This commercial practice allows you to display a price for the package you are bidding that is less
+                <td>This práctica comercial allows you to display a price for the package you are bidding that is less
                     than the total price you are asking for it. The difference between the actual price and the price
                     you are displaying is equal to the cost for viewing the full list of packages (2 UME), regardless
                     of whether you decided to pay this cost or not.</td>
                 <td>Suppose you offer a package to Roma and the price you claim for this package is 80 UME. If you
-                    decide to use this commercial practice, your offer will appear with a price of 78 UME*, with a note
+                    decide to use this práctica comercial, your offer will appear with a price of 78 UME*, with a note
                     indicating the total price.</td>
         </tbody>
     </table>
 
-    <p>Notice that these commercial practices can be used truthfully (case 1) or untruthfully (case 2). Using the
-        examples in the table above, in the following table you will find each of the commercial practices and the
+    <p>Notice that these práctica comercials can be used truthfully (case 1) or untruthfully (case 2). Using the
+        examples in the table above, in the following table you will find each of the práctica comercials and the
         examples for case 1 and case 2.</p>
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Commercial Practice</th>
+                <th scope="col">Práctica comercial</th>
                 <th scope="col">Case 1 (truthful)</th>
                 <th scope="col">Case 2 (untruthful)</th>
             </tr>
@@ -108,7 +108,7 @@
         </tbody>
     </table>
 
-    <p>Remember that it is your decision whether or not to use any of these commercial practices.</p>
+    <p>Remember that it is your decision whether or not to use any of these práctica comercials.</p>
 
     <p>In the table below you can see what your bid would look like in the list of bids with each of the business
         practices if you decided to use one of them.</p>
@@ -116,7 +116,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Commercial Practice</th>
+                <th scope="col">Práctica comercial</th>
                 <th scope="col">Chosen</th>
                 <th scope="col">Unchosen</th>
             </tr>
@@ -208,12 +208,12 @@
 <table class="table table-bordered">
      <thead>
             <tr>
-                <th colspan="2">Choose a commercial practice</th>
+                <th colspan="2">Choose a práctica comercial</th>
             </tr>
      </thead>
         <tbody>
             <tr>
-                <td>Now that you know how your offer will look if you choose a commercial practice, choose one from the following list: </td>
+                <td>Now that you know how your offer will look if you choose a práctica comercial, choose one from the following list: </td>
                 <td> {{ form.com_practice }} </td>
             </tr>
         </tbody>

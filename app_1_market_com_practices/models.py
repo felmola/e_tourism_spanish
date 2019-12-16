@@ -179,7 +179,7 @@ class Player(BasePlayer):
 
     see_list = models.BooleanField(initial = False)
     com_practice = models.IntegerField(choices = [
-        [1, "Mejor precio garantizado"], [2,"Precio de referencia"], [3, "Precio de referencia (+20 ECU of discount)"], [4, "Drip Pricing"], [5, "None"]
+        [1, "Mejor precio garantizado"], [2,"Precio de referencia"], [3, "Precio de referencia (+20 UME de descuento)"], [4, "Drip Pricing"], [5, "Ninguna"]
     ])
     ask_price_fin = models.IntegerField()
 
