@@ -3,181 +3,184 @@
 
 {% block title %}
     {% if player.role == "seller" %}
-        Decision of the seller (Period {{ subsession.round_number }} of {{ Constants.num_rounds }})
+        Decisión del vendedor (Periodo {{ subsession.round_number }} de {{ Constants.num_rounds }})
     {% else %}
-        Decision of the buyer (Period {{ subsession.round_number }} of {{ Constants.num_rounds }})
+        Decisión del comprador (Periodo {{ subsession.round_number }} de {{ Constants.num_rounds }})
     {% endif %}
 {% endblock %}
 
 {% block content %}
     {% if player.role == "seller" %}
-    <p>You were assigned to the role of seller. Remember that you will keep this role during the 5 trading rounds. You
-        will be able to sell only one package per trading round. The computer will randomly assign you one of the 5
-        available packages for you to sell in the market. Keep in mind that other sellers may sell the same package as
-        you. Additionally, you will be given a "value" of that package. This value represents the cost you would incur
-        if you were to close a transaction.</p>
+    <p>Usted fue asignado al rol de vendedor. Recuerde que usted tendrá este rol asignado durante los 5 periodos de
+        negociación. Usted podrá vender solo un paquete turístico por cada periodo de negociación. El computador le
+        asignará aleatoriamente uno de los 5 paquetes turísticos disponibles para que usted lo venda en el mercado.
+        Tenga en cuenta que otros vendedores pueden vender el mismo paquete turístico que usted. Adicionalmente, a
+        usted se le dará una “valoración” de ese paquete. Esta valoración representa el costo en el que usted incurriría
+        si usted llegara a cerrar una transacción.</p>
 
-    <p>Keep in mind that the costs are private, that is, only you know this number. Neither the other sellers nor the
-        buyers know this information. In total there are 5 types of tourist packages whose only difference will be the
-        destination: Berlín, Madrid, Viena, Paris and Roma. You will only receive one of these and its respective
-        cost.</p>
+    <p>Tenga en cuenta que los costos son privados, es decir, solo usted conoce este valor. Ni los otros vendedores ni
+        los compradores conocen esta información. En total hay 5 tipos de paquetes turísticos cuya única diferencia será
+        el destino: Berlín, Madrid, Viena, Paris y Roma. Usted solo recibirá uno de estos y su respectivo costo.</p>
 
-    <p>You will have to fix a price for the package that was assigned to you. This price must be higher than the cost
-        of the package. Your earnings will be calculated as the difference between the price you set and the cost of the
-        package. If you fail to complete a transaction, you will not incur any costs, but you will not make any profit
-        either. Think of it this way, let's suppose you have a chance to get the package in question, and if you manage.
-        to sell it, you'll earn the difference. The cost is what you would have to pay to get the package. If the cost
-        is 50 ECU and you manage to sell the package for 70 ECU, then your profit would be 20 ECU (más la dotación inicial de {{ Constants.endowment }} UME). If you do not sell the package, your profit would be zero (más la dotación inicial de {{ Constants.endowment }} UME), i.e. you would not incur in any costs and would not receive any income.</p>
+    <p>Usted deberá fijar un precio para el paquete que le fue asignado. Este precio debe ser mayor que el costo del
+        paquete. Sus ganancias serán calculadas como la diferencia entre el precio que usted fije y el costo del
+        paquete. Si usted no logra completar una transacción, usted no incurrirá en ningún costo, pero tampoco tendrá
+        ninguna ganancia. Piénselo de esta manera, supongamos que usted tenga la posibilidad de conseguir el paquete en
+        cuestión, y si logra venderlo, se ganaría la diferencia. El costo es lo que tendría que pagar para conseguir el
+        paquete. Si el costo es de 50 ECU y usted logra vender el paquete por 70 ECU, entonces su ganancia sería de  20
+        ECU (más la dotación inicial de {{ Constants.endowment }} UME). Si no logra vender el paquete, su ganancia sería
+        de cero (más la dotación inicial de {{ Constants.endowment }} UME), es decir no incurriría en ningún costo ni
+        recibiría ningún ingreso</p>
 
-    <p>Let's see another example:</p>
+    <p>Veamos otro ejemplo:</p>
 
-    <p>Suppose the cost of your package is 30 ECU and you manage to sell the package at a price of 50 ECU. You will then
-        earn 50 ECU - 30 ECU = 20 ECU (más la dotación inicial de {{ Constants.endowment }} UME). If you fail to
-        close a transaction, you will not incur in any no cost nor profit, i.e. your profit will be 0 ECU (más la dotación inicial de {{ Constants.endowment }} UME)</p>
+    <p>Suponga que el costo de su paquete es de 30 ECU y usted logra vender el paquete con un precio de 50 ECU. Usted
+        ganará entonces 50 ECU - 30 ECU = 20 ECU (más la dotación inicial de {{ Constants.endowment }} UME). Si usted
+        no logra cerrar una transacción, no incurrirá en ningún costo ni en ninguna ganancia, es decir, su ganancia será
+        de 0 ECU (más la dotación inicial de {{ Constants.endowment }} UME)</p>
 
-    <p>It is important to note that two buyers can select the same offer, but only one of them will complete the
-        transaction. The one who makes the decision to buy the package the fastest will be the one who completes the
-        transaction with you.</p>
+    <p>Es importante notar que dos compradores pueden seleccionar la misma oferta, pero solo uno de ellos completará la
+        transacción. Quien tome la decisión de comprar el paquete de manera más rápida será quien complete la
+        transacción con usted.</p>
 
-    <p>Additionally, you can choose a commercial practice to help make your package more attractive in the market. There
-        are three commercial practices and if you use them, they will be visible to the buyer at the time of completing
-        the transaction. However, keep in mind that any of these commercial practices can be used truthfully or
-        untruthfully.</p>
+    <p>Adicionalmente usted podrá escoger una práctica comercial para ayudarlo a que su paquete sea más atractivo en el
+        mercado. Las prácticas comerciales son tres y si las usa estas serán visibles para el comprador a la hora de
+        completar la transacción. Sin embargo, tenga en cuenta que cualquiera de estas prácticas comerciales puede ser
+        usada de manera verídica o no verídica.</p>
 
-    <p>In the end, we will audit two of the sellers randomly, i.e. the probability of being audited is 20%. If an
-        audited seller is using some commercial practice untruthfully, the seller must pay 20 ECUs as a fine. These 20
-        ECU will be distributed among the buyers.</p>
+    <p>Al final, nosotros auditaremos dos vendedores de manera aleatoria, es decir, la probabilidad de ser auditado es
+        del 20%. Si un vendedor que es auditado esta usando una práctica comercial de manera no verídica, el vendedor
+        debe pagar una multa de 20 UME. Estas 20 UME serán distribuidas entre todos los compradores.</p>
 
-    <p>Please click on the "Next" button to see the package you are going to sell and its cost </p>
+    <p>Por favor presione el botón "Siguiente" para ver el paquete que usted va a vender y su costo.</p>
 
 
     {% else %}
-    <p>You were assigned to the role of buyer. Remember that you will keep this role during the 5 trading rounds.
-        You will be able to buy only one package per trading round. The computer will give you a "value" for each of the
-        packages you will find for sale in the market. This value represents how much you value that package if you were
-        to close a transaction. In total there are 5 types of tourist packages whose only difference will be the
-        destination: Berlín, Madrid, Viena, Paris and Roma. You will only receive five values, one for each package.</p>
+    <p>Usted fue asignado al rol de comprador. Recuerde que usted tendrá este rol asignado durante los 5 periodos de
+        negociación. Usted podrá comprar solo un paquete turístico por cada periodo de negociación. El computador le
+        dará una “valoración” para cada uno de los paquetes que encontrará a la venta en el mercado. Esta valoración
+        representa qué tanto valor le genera adquirir ese paquete si usted llegara a cerrar una transacción. En total
+        hay 5 tipos de paquetes turísticos cuya única diferencia será el destino: Berlín, Madrid, Viena, Paris y Roma.
+        Usted solo recibirá cinco valoraciones, una para cada uno de los paquetes.</p>
 
-    <p>Please note that the values are private, i.e. only you know this numbers. Neither the other buyers nor the
-        sellers know this information.</p>
+    <p>Tenga en cuenta que las valoraciones son privadas, es decir, solo usted conoce este valor. Ni los otros
+        compradores ni los vendedores conocen esta información.</p>
 
-    <p>You will be shown a list of all package offers in the market and their respective prices. To close a transaction,
-        you must select one and only one of the packages in the market. Your earnings will be calculated as the
-        difference between your valuation and the price at which you purchased the package. If you fail to complete a
-        transaction, you won’t make any profit (más la dotación inicial de {{ Constants.endowment }} UME). </p>
+    <p>A usted se le mostrará una lista con todas las ofertas de paquetes en el mercado y sus respectivos precios. Para
+        cerrar una transacción, usted deberá seleccionar uno y solo uno de los paquetes en el mercado. Sus ganancias
+        serán calculadas como la diferencia entre su valoración y el precio al que adquirió el paquete. Si usted no
+        logra completar una transacción, usted no tendrá ninguna ganancia. (más la dotación inicial de
+        {{ Constants.endowment }} UME). </p>
 
-    <p>Think of it this way, suppose you have the ability to resell each of the five packages in question, and if you
-        manage to get one, you will earn the difference. The value is what you would receive when you resell the
-        package. If the value is 70 ECU and you manage to get the package at a price of 50 ECU, then your profit would be
-        20 ECU (más la dotación inicial de {{ Constants.endowment }} UME). If you do not succeed in buying the
-        package, your profit would be zero, i.e. you would not pay any price and would not receive any income (except
-    for the initial endowment of {{ Constants.endowment }} ECU).</p>
+    <p>Piénselo de esta manera, supongamos que usted tenga la posibilidad de revender cada uno de los cinco paquetes en
+        cuestión, y si logra conseguir uno, se ganaría la diferencia. La valoración es lo que recibiría al revender el
+        paquete. Si la valoración es 70 ECU y usted logra conseguir el paquete a un precio de 50 ECU, entonces su ganancia sería de
+        20 ECU (más la dotación inicial de {{ Constants.endowment }} UME). Si no logra comprar el paquete, su ganancia
+        sería de cero, es decir no pagaría ningún precio y ni recibiría ningún ingreso (excepto por la dotación inicial
+        de {{ Constants.endowment }} UME).</p>
 
-    <p>Let's see another example:</p>
+    <p>Veamos otro ejemplo:</p>
 
-    <p>Suppose that the value for the package you decide to buy is 50 ECU and you manage to buy the package at a price
-        of 30 ECU. You will then earn 50 ECU - 30 ECU = 20 ECU  (más la dotación inicial de {{ Constants.endowment }} UME).
-        If you fail to close a transaction, you will not incur in any cost nor profit, i.e. your profit will be 0 ECU
+    <p>Suponga que el valor para el paquete que usted decide comprar es de 50 ECU y usted logra comprar el paquete a un precio de
+        30 ECU. Usted ganará entonces 50 ECU - 30 ECU = 20 ECU  (más la dotación inicial de {{ Constants.endowment }} UME).
+        Si usted no logra cerrar una transacción, no incurrirá en ningún costo ni en ninguna ganancia, es decir, su ganancia será de 0 ECU
       (más la dotación inicial de {{ Constants.endowment }} UME).</p>
 
-    <p>It is important to note that two buyers can select the same offer but only one of them will complete the
-        transaction. The one who makes the decision to buy the package the fastest will be the one who completes the
-        transaction.</p>
+    <p>Es importante notar que dos compradores pueden seleccionar la misma oferta pero solo uno de ellos completará la
+        transacción. Quien tome la decisión de comprar el paquete de manera más rápida será quien complete la transacción.</p>
 
-    <p>Additionally, notice that the sellers can choose a commercial practice to help make their packages more
-        attractive in the market. There are three commercial practices and if a seller uses them, they will be visible
-        to the buyer at the time of completing the transaction. However, keep in mind that any of these commercial
-        practices can be used truthfully or untruthfully.</p>
+    <p>Adicionalmente, note que los vendedores podrán escoger prácticas comerciales para que sus paquetes sean más
+        atractivos en el mercado. Las prácticas comerciales son tres y si un vendedor las usa estas serán visibles para
+        usted a la hora de completar la transacción. Sin embargo, tenga en cuenta que cualquiera de estas prácticas
+        comerciales puede ser usada de manera verídica o no verídica.</p>
 
-    <p>In the end, we will audit two of the sellers randomly, i.e. the probability of being audited is 20%. If an
-        audited seller is using some commercial practice untruthfully, the seller must pay 20 ECU as a fine. These 20 ECU
-        will be distributed among the buyers.</p>
+    <p>Al final, nosotros auditaremos dos vendedores de manera aleatoria, es decir, la probabilidad de ser auditado es
+        del 20%. Si un vendedor que es auditado esta usando una práctica comercial de manera no verídica, el vendedor
+        debe pagar una multa de 20 UME. Estas 20 UME serán distribuidas entre todos los compradores.</p>
 
-    <p>There are three commercial practices available that buyers will be able to use to make their package more
-        attractive to the market.</p>
+    <p>Hay tres prácticas comerciales disponibles que los vendedores podrán usar para hacer sus paquetes más atractivos
+        en el mercado. Estas son:</p>
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Commercial Practice</th>
-                <th scope="col">Definition</th>
-                <th scope="col">Example</th>
+                <th scope="col">Práctica Comercial</th>
+                <th scope="col">Definición</th>
+                <th scope="col">Ejemplo</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="row">Mejor precio garantizado</th>
-                <td>This commercial practice allows the seller to make the announcement that, among all packages with
-                    the same
-                    destination, this one has the lowest price.</td>
-                <td>Suppose the seller offers the package to Roma. There may be other sellers in the market selling the
-                    same
-                    package to Roma, but if the seller opts for this commercial practice, the seller would be saying that, of all the
-                    packages to Roma, hers/his is the cheapest.</td>
+                <td>Esta práctica comercial permite hacer el anuncio de que entre todos los paquetes con el mismo
+                    destino, este tiene el menor precio</td>
+                <td>Suponga que el vendedor ofrece un paquete a Roma. Puede haber otros vendedores en el mercado
+                    vendiendo el mismo paquete a Roma, pero si el vendedor opta por esta práctica comercial, el vendedor
+                    estará diciendo que, de todos los paquetes a Roma, el de él/ella es el más barato.</td>
             </tr>
             <tr>
                 <th scope="row">Precio de referencia</th>
-                <td>This commercial practice allows the seller to make the announcement that between the first price the seller
-                    proposed and the end, the seller offered a discount.</td>
-                <td>Suppose the seller offers a package to Roma. The seller can claim that she/he made a discount between the first price
-                    she/he bid of 60 ECU and the final (the one the seller confirmed after deciding whether or not to observe the
-                    competition)</td>
+                <td>Esta práctica comercial permite hacer el anuncio de que entre el primer precio que propuso y el
+                    efectivo el vendedor quiso hacer un descuento.</td>
+                <td>Suponga que el vendedor ofrece un paquete a Roma. El vendedor puede decir que él/ella hizo un
+                    descuento entre el primer precio que ofreció de 60 UME y el precio final (el que el vendedor
+                    confirmó después de observar o no a la competencia).</td>
             </tr>
             <tr>
                 <th scope="row">Drip pricing</th>
-                <td>This commercial practice allows the seller to display a price for the package she/he is bidding that is less
-                    than the total price she/he is asking for it. The difference between the actual price and the price
-                    the seller is displaying is equal to the cost for viewing the full list of packages (2 ECU), regardless
-                    of whether the seller decided to pay this cost or not.</td>
-                <td>Suppose the seller offers a package to Roma and the price the seller claims for this package is 80 ECU. If the seller
-                    decides to use this commercial practice, the seller's offer will appear with a price of 78 ECU*, with a note
-                    indicating the total price.</td>
+                <td>Esta práctica comercial permite mostrar un precio para el paquete que está ofertando que es menor al
+                    precio total. La diferencia entre el precio real y el precio que está mostrando es igual al costo
+                    por ver la lista completa de paquetes  (2 ECU), independientemente de si el vendedor decidió pagar
+                    este costo o no.</td>
+                <td>Suponga que usted oferta un paquete a Roma y el precio que usted quiere que le paguen por este
+                    paquete es de 80 UME. Sí el comprador decide usar esta práctica comercial, su oferta aparecerá con
+                    un precio de 78* UME, con una nota que indica el precio total.</td>
         </tbody>
     </table>
 
-    <p>Notice that these commercial practices can be used truthfully (case 1) or untruthfully (case 2). Using the
-        examples in the table above, in the following table you will find each of the commercial practices and the
-        examples for case 1 and case 2.</p>
+    <p>Note que estas prácticas comerciales se pueden usar de manera verídica (caso 1) o no verídica (caso 2). Usando
+        los ejemplos de la tabla anterior, en la siguiente tabla encontrará cada una de las prácticas comerciales y los
+        ejemplos del caso 1 y caso 2.</p>
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Commercial Practice</th>
-                <th scope="col">Case 1 (truthful)</th>
-                <th scope="col">Case 2 (untruthful)</th>
+                <th scope="col">Práctica Comercial</th>
+                <th scope="col">Caso 1 (uso verídico)</th>
+                <th scope="col">Cas2 2 (uso no verídico)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="row">Mejor precio garantizado</th>
-                <td>1) When there is no other package to Roma. 2) When there exists at least another package to Roma
-                    and the latter has a larger price.</td>
-                <td>1) When there exists at least another package to Roma and the latter has a smaller price.</td>
+                <td>1) Cuando no existe otro paquete a Roma. 2) Cuando exista al menos otro paquete a Roma y este tenga
+                    un precio superior al de su oferta.</td>
+                <td>1) Cuando existe al menos otro paquete a Palau y, adicionalmente, este tiene un precio menor al de su oferta.</td>
             </tr>
             <tr>
                 <th scope="row">Precio de referencia</th>
-                <td>1) Use of the real discount.</td>
-                <td>1) Use of the real discount plus 20 ECU</td>
+                <td>1) Uso del verdadero descuento.</td>
+                <td>1) Uso del verdadero descuento más 20 UME</td>
             </tr>
             <tr>
                 <th scope="row">Drip pricing</th>
-                <td>1) When the seller shows the price minus the cost to see the first offer of the other sellers.</td>
-                <td>1) When the seller decides not to see the prices of the competitors but still show the price net of this cost</td>
+                <td>1) Cuando el vendedor muestra el precio menos el costo de ver la primera oferta de los demás vendedores</td>
+                <td>1) Cuando el vendedor decide no asumir el costo de ver la lista completa de paquetes con los
+                    precios, pero muestra el precio al neto de ese costo.</td>
             </tr>
         </tbody>
     </table>
 
-    <p>Remember that it is the seller’s decision whether or not to use any of these commercial practices.</p>
+    <p>Recuerde que es decisión del vendedor usar o no alguna de estas prácticas comerciales.</p>
 
-    <p>In the table below you can see what a bid would look like in the list of bids with each of the business practices
-        whether the seller decided to use one of them.</p>
+    <p>En la siguiente tabla podrá ver como luciría un paquete en la lista de ofertas con cada una de las prácticas comerciales.</p>
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Commercial Practice</th>
-                <th scope="col">Chosen</th>
-                <th scope="col">Unchosen</th>
+                <th scope="col">Práctica comercial</th>
+                <th scope="col">Cuando no se usa</th>
+                <th scope="col">Cuando se usa</th>
             </tr>
         </thead>
         <tbody>
@@ -264,8 +267,8 @@
         </tbody>
     </table>
 
-    <p>Please click on the "Next" button to know your private valuations of each of the packages, to see the list of
-        offers, and to select at least one.</p>
+    <p>Por favor de clic en el botón “Siguiente” para conocer sus valoraciones privadas de cada uno de los paquetes,
+        para ver la lista de ofertas, y para que seleccione al menos una.</p>
     {% endif %}
 <button class="otree-btn-next btn btn-primary next-button otree-next-button">Siguiente</button>
 

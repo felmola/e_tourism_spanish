@@ -3,82 +3,86 @@
 
 {% block title %}
     {% if player.role == "seller" %}
-        Decision of the seller (Period {{ subsession.round_number }} of {{ Constants.num_rounds }})
+        Decisión del vendedor (Periodo {{ subsession.round_number }} de {{ Constants.num_rounds }})
     {% else %}
-        Decision of the buyer (Period {{ subsession.round_number }} of {{ Constants.num_rounds }})
+        Decisión del comprador (Periodo {{ subsession.round_number }} de {{ Constants.num_rounds }})
     {% endif %}
 {% endblock %}
 
 {% block content %}
     {% if player.role == "seller" %}
-    <p>You were assigned to the role of seller. Remember that you will keep this role during the 5 trading rounds. You
-        will be able to sell only one package per trading round. The computer will randomly assign you one of the 5
-        available packages for you to sell in the market. Keep in mind that other sellers may sell the same package as
-        you. Additionally, you will be given a "value" of that package. This value represents the cost you would incur
-        if you were to close a transaction.</p>
+    <p>Usted fue asignado al rol de vendedor. Recuerde que usted tendrá este rol asignado durante los 5 periodos de
+        negociación. Usted podrá vender solo un paquete turístico por cada periodo de negociación. El computador le
+        asignará aleatoriamente uno de los 5 paquetes turísticos disponibles para que usted lo venda en el mercado.
+        Tenga en cuenta que otros vendedores pueden vender el mismo paquete turístico que usted. Adicionalmente, a
+        usted se le dará una “valoración” de ese paquete. Esta valoración representa el costo en el que usted incurriría
+        si usted llegara a cerrar una transacción.</p>
 
-    <p>Keep in mind that the costs are private, that is, only you know this number. Neither the other sellers nor the
-        buyers know this information. In total there are 5 types of tourist packages whose only difference will be the
-        destination: Berlín, Madrid, Viena, Paris and Roma. You will only receive one of these and its respective
-        cost.</p>
+    <p>Tenga en cuenta que los costos son privados, es decir, solo usted conoce este valor. Ni los otros vendedores ni
+        los compradores conocen esta información. En total hay 5 tipos de paquetes turísticos cuya única diferencia será
+        el destino: Berlín, Madrid, Viena, Paris y Roma. Usted solo recibirá uno de estos y su respectivo costo.</p>
 
-    <p>You will have to fix a price for the package that was assigned to you. This price must be higher than the cost
-        of the package. Your earnings will be calculated as the difference between the price you set and the cost of the
-        package. If you fail to complete a transaction, you will not incur any costs, but you will not make any profit
-        either. Think of it this way, let's suppose you have a chance to get the package in question, and if you manage.
-        to sell it, you'll earn the difference. The cost is what you would have to pay to get the package. If the cost
-        is 50 UME and you manage to sell the package for 70 UME, then your profit would be 20 UME (plus the initial
-        endowment of {{ Constants.endowment }} UME). If you do not sell the package, your profit would be zero (plus the initial
-        endowment of {{ Constants.endowment }} UME), i.e. you would not incur in any costs and would not receive any income.</p>
+    <p>Usted deberá fijar un precio para el paquete que le fue asignado. Este precio debe ser mayor que el costo del
+        paquete. Sus ganancias serán calculadas como la diferencia entre el precio que usted fije y el costo del
+        paquete. Si usted no logra completar una transacción, usted no incurrirá en ningún costo, pero tampoco tendrá
+        ninguna ganancia. Piénselo de esta manera, supongamos que usted tenga la posibilidad de conseguir el paquete en
+        cuestión, y si logra venderlo, se ganaría la diferencia. El costo es lo que tendría que pagar para conseguir el
+        paquete. Si el costo es de 50 ECU y usted logra vender el paquete por 70 ECU, entonces su ganancia sería de  20
+        ECU (más la dotación inicial de {{ Constants.endowment }} UME). Si no logra vender el paquete, su ganancia sería
+        de cero (más la dotación inicial de {{ Constants.endowment }} UME), es decir no incurriría en ningún costo ni
+        recibiría ningún ingreso</p>
 
-    <p>Let's see another example:</p>
+    <p>Veamos otro ejemplo:</p>
 
-    <p>Suppose the cost of your package is 30 UME and you manage to sell the package at a price of 50 UME. You will then
-        earn 50 UME - 30 UME = 20 UME (plus the initial endowment of {{ Constants.endowment }} UME). If you fail to
-        close a transaction, you will not incur in any no cost nor profit, i.e. your profit will be 0 UME (plus the initial
-        endowment of {{ Constants.endowment }} UME)</p>
+    <p>Suponga que el costo de su paquete es de 30 ECU y usted logra vender el paquete con un precio de 50 ECU. Usted
+        ganará entonces 50 ECU - 30 ECU = 20 ECU (más la dotación inicial de {{ Constants.endowment }} UME). Si usted
+        no logra cerrar una transacción, no incurrirá en ningún costo ni en ninguna ganancia, es decir, su ganancia será
+        de 0 ECU (más la dotación inicial de {{ Constants.endowment }} UME)</p>
 
-    <p>It is important to note that two buyers can select the same offer, but only one of them will complete the
-        transaction. The one who makes the decision to buy the package the fastest will be the one who completes the
-        transaction with you.</p>
+    <p>Es importante notar que dos compradores pueden seleccionar la misma oferta, pero solo uno de ellos completará la
+        transacción. Quien tome la decisión de comprar el paquete de manera más rápida será quien complete la
+        transacción con usted.</p>
 
-    <p>Please click on the "Next" button to see the package you are going to sell and its cost </p>
+
+    <p>Por favor presione el botón "Siguiente" para ver el paquete que usted va a vender y su costo.</p>
+
 
     {% else %}
-    <p>You were assigned to the role of buyer. Remember that you will keep this role during the 5 trading rounds.
-        You will be able to buy only one package per trading round. The computer will give you a "value" for each of the
-        packages you will find for sale in the market. This value represents how much you value that package if you were
-        to close a transaction. In total there are 5 types of tourist packages whose only difference will be the
-        destination: Berlín, Madrid, Viena, Paris and Roma. You will only receive five values, one for each package.</p>
+    <p>Usted fue asignado al rol de comprador. Recuerde que usted tendrá este rol asignado durante los 5 periodos de
+        negociación. Usted podrá comprar solo un paquete turístico por cada periodo de negociación. El computador le
+        dará una “valoración” para cada uno de los paquetes que encontrará a la venta en el mercado. Esta valoración
+        representa qué tanto valor le genera adquirir ese paquete si usted llegara a cerrar una transacción. En total
+        hay 5 tipos de paquetes turísticos cuya única diferencia será el destino: Berlín, Madrid, Viena, Paris y Roma.
+        Usted solo recibirá cinco valoraciones, una para cada uno de los paquetes.</p>
 
-    <p>Please note that the values are private, i.e. only you know this numbers. Neither the other buyers nor the
-        sellers know this information.</p>
+    <p>Tenga en cuenta que las valoraciones son privadas, es decir, solo usted conoce este valor. Ni los otros
+        compradores ni los vendedores conocen esta información.</p>
 
-    <p>You will be shown a list of all package offers in the market and their respective prices. To close a transaction,
-        you must select one and only one of the packages in the market. Your earnings will be calculated as the
-        difference between your valuation and the price at which you purchased the package. If you fail to complete a
-        transaction, you won’t make any profit (plus the initial endowment of {{ Constants.endowment }} UME). </p>
+    <p>A usted se le mostrará una lista con todas las ofertas de paquetes en el mercado y sus respectivos precios. Para
+        cerrar una transacción, usted deberá seleccionar uno y solo uno de los paquetes en el mercado. Sus ganancias
+        serán calculadas como la diferencia entre su valoración y el precio al que adquirió el paquete. Si usted no
+        logra completar una transacción, usted no tendrá ninguna ganancia. (más la dotación inicial de
+        {{ Constants.endowment }} UME). </p>
 
-    <p>Think of it this way, suppose you have the ability to resell each of the five packages in question, and if you
-        manage to get one, you will earn the difference. The value is what you would receive when you resell the
-        package. If the value is 70 UME and you manage to get the package at a price of 50 UME, then your profit would be
-        20 UME (plus the initial endowment of {{ Constants.endowment }} UME). If you do not succeed in buying the
-        package, your profit would be zero, i.e. you would not pay any price and would not receive any income (except
-    for the initial endowment of {{ Constants.endowment }} UME).</p>
+    <p>Piénselo de esta manera, supongamos que usted tenga la posibilidad de revender cada uno de los cinco paquetes en
+        cuestión, y si logra conseguir uno, se ganaría la diferencia. La valoración es lo que recibiría al revender el
+        paquete. Si la valoración es 70 ECU y usted logra conseguir el paquete a un precio de 50 ECU, entonces su ganancia sería de
+        20 ECU (más la dotación inicial de {{ Constants.endowment }} UME). Si no logra comprar el paquete, su ganancia
+        sería de cero, es decir no pagaría ningún precio y ni recibiría ningún ingreso (excepto por la dotación inicial
+        de {{ Constants.endowment }} UME).</p>
 
-    <p>Let's see another example:</p>
+    <p>Veamos otro ejemplo:</p>
 
-    <p>Suppose that the value for the package you decide to buy is 50 UME and you manage to buy the package at a price
-        of 30 UME. You will then earn 50 UME - 30 UME = 20 UME  (plus the initial endowment of {{ Constants.endowment }} UME).
-        If you fail to close a transaction, you will not incur in any cost nor profit, i.e. your profit will be 0 UME
-      (plus the initial endowment of {{ Constants.endowment }} UME).</p>
+    <p>Suponga que el valor para el paquete que usted decide comprar es de 50 ECU y usted logra comprar el paquete a un precio de
+        30 ECU. Usted ganará entonces 50 ECU - 30 ECU = 20 ECU  (más la dotación inicial de {{ Constants.endowment }} UME).
+        Si usted no logra cerrar una transacción, no incurrirá en ningún costo ni en ninguna ganancia, es decir, su ganancia será de 0 ECU
+      (más la dotación inicial de {{ Constants.endowment }} UME).</p>
 
-    <p>It is important to note that two buyers can select the same offer but only one of them will complete the
-        transaction. The one who makes the decision to buy the package the fastest will be the one who completes the
-        transaction.</p>
+    <p>Es importante notar que dos compradores pueden seleccionar la misma oferta pero solo uno de ellos completará la
+        transacción. Quien tome la decisión de comprar el paquete de manera más rápida será quien complete la transacción.</p>
 
-    <p>Please click on the "Next" button to know your private valuations of each of the packages, to see the list of
-        offers, and to select at least one.</p>
+    <p>Por favor de clic en el botón “Siguiente” para conocer sus valoraciones privadas de cada uno de los paquetes,
+        para ver la lista de ofertas, y para que seleccione al menos una.</p>
     {% endif %}
 <button class="otree-btn-next btn btn-primary next-button otree-next-button">Siguiente</button>
 
