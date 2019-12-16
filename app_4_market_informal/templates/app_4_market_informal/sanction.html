@@ -15,7 +15,13 @@ $(document).ready(function(){
     $("#seller_report").val();
   });
 });
-</
+    
+$(document).ready(function(){
+  $("#id_next").click(function()){
+    $("#seller_report").val();
+    };
+});
+    
 </script>
 <script>
 $(document).ready(function() {
@@ -71,7 +77,7 @@ $(document).ready(function() {
         <tbody>
 {%for p in group.get_players %}
     {% if p.role == "seller" %}
-        {% if p.com_practice < 4 %}
+        {% if p.com_practice < 5 %}
             <tr>
                 <td>Seller {{p.id_in_group}}</td>
                 <td>
@@ -103,14 +109,19 @@ $(document).ready(function() {
                 <td>
                     <input id = "id_check" name ="report_seller" type="checkbox" value = {{p.id_in_group}} />
                 </td>
-        {% else %}
+        </tbody>
+        </table>
+        {% next_button %}
+            
+            {% else %}
         <p>Ningún vendedor uso una práctica comercial, por lo tanto usted no puede reportar a nadie.</p>
+        <button id = "id_next" class="otree-btn-next btn btn-primary next-button otree-next-button">Weiter</button>
+        <input id = "id_hidden" type ="hidden" name ="report_seller" value = 0 />
         {% endif %}
     {% endif %}
 {% endfor %}
-        </tbody>
-        </table>
 
-    {% next_button %}
+
+   
 {{ form.report_seller.errors }}
 {% endblock %}
