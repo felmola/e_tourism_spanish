@@ -97,7 +97,7 @@ $(document).ready(function() {
                             {% if p.com_practice == 1 %}
                             <h5 class="card-title">{{p.ask_price_fin}} </h5>
                             <br>
-                            <p class="card-text">Best price guaranteed</p>
+                            <p class="card-text">Mejor precio garantizado</p>
                             {% elif p.com_practice == 2 %}
                             <h5 class="card-title"><del>{{p.ask_price_ini|c}}</del> </h5>
                             <br>
@@ -115,7 +115,7 @@ $(document).ready(function() {
                             {% endif %}
                             <hr class="my-4">
                             <a href = # data-toggle="tooltip" title = "The price you are going to pay is {{p.get_over_average_display}} what it normally is &#{{p.emoji}}" data-original-title="Default tooltip">
-                            <button name = "my_seller" value = {{p.id_in_group}} class = "btn btn-primary btn-large">Buy</button> </a>
+                            <button name = "my_seller" value = {{p.id_in_group}} class = "btn btn-primary btn-large">Comprar</button> </a>
                         </div>
                     </div>
                 </td>

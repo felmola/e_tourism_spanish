@@ -24,7 +24,7 @@ Markets
 
 class Constants(BaseConstants):
     name_in_url = 'app_1_market_com_practices'
-    players_per_group = 20
+    players_per_group = 2
     num_rounds = 5
     endowment = 25
     see_list_cost = 1
@@ -32,7 +32,7 @@ class Constants(BaseConstants):
 
     packages = [i for i in range(1, 6)]
 
-    cities =["Rome", "Vienna", "Paris", "Madrid", "Berlin"]
+    cities =["Roma", "Viena", "Paris", "Madrid", "Berlín"]
 
     seller_valuations = [70, 60, 50, 50, 40, 40, 30, 20, 10, 10]
     buyer_valuations = [100, 100, 90, 80, 80, 70, 60, 60, 50, 40]
@@ -164,11 +164,11 @@ class Player(BasePlayer):
     seller_package = models.IntegerField(choices =
     [
         [0, "None"],
-        [1, "Rome"],
-        [2, "Vienna"],
+        [1, "Roma"],
+        [2, "Viena"],
         [3, "Paris"],
         [4, "Madrid"],
-        [5, "Berlin"]
+        [5, "Berlín"]
 
     ])
     seller_valuation = models.IntegerField()
@@ -179,7 +179,7 @@ class Player(BasePlayer):
 
     see_list = models.BooleanField(initial = False)
     com_practice = models.IntegerField(choices = [
-        [1, "Best Price Guarantee"], [2,"Reference Pricing"], [3, "Reference Pricing (+20 ECU of discount)"], [4, "Drip Pricing"], [5, "None"]
+        [1, "Mejor precio garantizado"], [2,"Precio de referencia"], [3, "Precio de referencia (+20 ECU of discount)"], [4, "Drip Pricing"], [5, "None"]
     ])
     ask_price_fin = models.IntegerField()
 
@@ -201,22 +201,22 @@ class Player(BasePlayer):
     buyer_packages = models.IntegerField(choices =
     [
         [0, "None"],
-        [1, "Rome"],
-        [2, "Vienna"],
+        [1, "Roma"],
+        [2, "Viena"],
         [3, "Paris"],
         [4, "Madrid"],
-        [5, "Berlin"]
+        [5, "Berlín"]
     ]
     )
 
     package_purchased = models.IntegerField( choices =
         [
             [0, "None"],
-            [1, "Rome"],
-            [2, "Vienna"],
+            [1, "Roma"],
+            [2, "Viena"],
             [3, "Paris"],
             [4, "Madrid"],
-            [5, "Berlin"]
+            [5, "Berlín"]
         ]
     )
     my_seller = models.IntegerField(initial = 0)

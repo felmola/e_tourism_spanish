@@ -3,7 +3,7 @@
 
 {% block title %}
 
-    Decision of the buyer (Period {{ subsession.round_number }} of {{ Constants.num_rounds }}))
+    Decisión del comprador (Periodo {{ subsession.round_number }} de {{ Constants.num_rounds }}))
 {% endblock %}
 
 {% block content %}
@@ -96,7 +96,7 @@ $(document).ready(function() {
                             {% if p.com_practice == 1 %}
                             <h5 class="card-title">{{p.ask_price_fin}} </h5>
                             <br>
-                            <p class="card-text">Best price guaranteed</p>
+                            <p class="card-text">Mejor precio garantizado</p>
                             {% elif p.com_practice == 2 %}
                             <h5 class="card-title"><del>{{p.ask_price_ini|c}}</del> </h5>
                             <br>
