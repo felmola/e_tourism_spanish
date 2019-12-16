@@ -10,25 +10,25 @@
 
         <tbody>
         <tr>
-                <td>Your seller ID is:</td>
+                <td>Su número de vendedor es:</td>
                 <td> {{player.id_in_group}} </td>
         </tr>
             <tr>
-                <td>The package you are going to sell is:</td>
+                <td>El paquete que usted va a vender es:</td>
                 <td> {{player.get_seller_package_display}} </td>
             </tr>
             <tr>
-                <td>The cost of this package is: </td>
+                <td>El costo de este paquete es:</td>
                 <td> {{player.seller_valuation |c}}</td>
             </tr>
             <tr>
-                <td>Please set the price at which you want to sell this package in the following box: <br>
-                Remember that for you to make a profit you must sell the package at a higher price than its cost.</td>
+                <td>Por favor ingrese el precio al que usted quiere vender este paquete en el siguiente recuadro:<br>
+                Recuerde que para poder hacer ganancias, usted debe vender el paquete a un precio mayor que su costo.</td>
                 <td><div class = "form-inline"> {{ form.ask_price_ini}} &nbsp; ECU</div></td>
             </tr>
             <tr>
-                <td>Would you like to see the complete list of offers in the package market, including prices? <br>
-                    This action will cost you {{Constants.see_list_cost}} that will be deducted from your initial endowment. </td>
+                <td>¿Le gustaría ver la lista completa de ofertas, incluyendo los precios, en el mercado de paquetes?<br>
+                    Esta acción le costará {{Constants.see_list_cost}} UME que serán deducidas de su dotación inicial.</td>
                 <td>{{ form.see_list }}</td>
 
             </tr>
@@ -36,8 +36,8 @@
     </table>
 
 
-    <p>Please click on the "Next" button to see the complete list of offers and prices in the market and to define the
-        final price of the package you are going to sell.</p>
+    <p>Por favor de clic en el botón “Siguiente” para ver la lista completa de ofertas y de precios en el mercado y para
+        definir el precio final del paquete que va a vender.</p>
 
     {% next_button %}
 {% endblock %}
