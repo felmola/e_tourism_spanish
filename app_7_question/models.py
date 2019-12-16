@@ -25,68 +25,68 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     gender = models.IntegerField(
-        label = 'What is your gender?',
-        choices = [(0, "Female"),
-                   (1, "Male"),
-                   (2,"Other")],
+        label = 'Cúal es su genero?',
+        choices = [(0, "Femenino"),
+                   (1, "Masculino"),
+                   (2,"Otro")],
         widget = widgets.RadioSelectHorizontal
     )
 
     age = models.IntegerField(
-        label = 'What is your age?',
+        label = '¿Qué edad tiene?',
         min = 18, max = 70
     )
 
     country = models.StringField(
-        label = "What is your country of origin?",
+        label = "¿Cúal es su país de origen?",
     )
 
     education = models.IntegerField(
-        label = 'What is your education level (maximum degree of completed studies)?',
-        choices = [(1, "No schooling"),
-                   (2, "Primary School"),
-                   (3, "Technical / Vocational school"),
-                   (4, "Secondary School (High School)"),
-                   (5, "University Degree (2-5 years)"),
-                   (6, "Post-graduate Degree (Master / Ph.D.)")]
+        label = '¿Cúal es su nivel de educación (el grado máximo de estudios finalizados)?',
+        choices = [(1, "Sin estudios"),
+                   (2, "Primaria (educación básica) "),
+                   (3, "Formación técnica/profesional"),
+                   (4, "Secundaria (bachillerato)"),
+                   (5, "Universitaria (2-5 años)"),
+                   (6, "Post-grado (master/doctorado)")]
     )
 
     civil_status = models.IntegerField(
-        label = 'What is your civil status',
-        choices = [(1, 'Single (Never married)'),
-                   (2, 'Living with partner'),
-                   (3, 'Married'),
-                   (4, 'Separated / Divorced'),
-                   (5, 'Widower')]
+        label = '¿Cúal es su estado civil?',
+        choices = [(1, 'Soltero/a (no se ha casado nunca)'),
+                   (2, 'Vive en pareja'),
+                   (3, 'Casado/a'),
+                   (4, 'Separado/a, divorciado/a'),
+                   (5, 'Viudo/a')]
     )
 
     income = models.IntegerField(
-        label= 'What is your approximate gross (brutto) annual income level in your household?',
+        label= '¿Qué nivel de ingresos anuales brutos tiene su hogar?',
         choices = [
-            (1, '0 - 20.000 Euro'),
-            (2,'20.001 - 40.000 Euro'),
-            (3,'40.001 - 60.000 Euro'),
-            (4,'60.001 - 80.000 Euro'),
-            (5,'80.001 - 100.000 Euro'),
-            (6,'Above 100.000 Euro')])
+            (1, '0 - 20.000 Euros'),
+            (2,'20.001 - 40.000 Euros'),
+            (3,'40.001 - 60.000 Euros'),
+            (4,'60.001 - 80.000 Euros'),
+            (5,'80.001 - 100.000 Euros'),
+            (6,'Más de 100.000 Euros')])
 
     online_frequency = models.IntegerField(
-        label = 'How often do you generally access the Internet?',
+        label = '¿Con qué frecuencia suele acceder a internet',
         choices = [
-            (1, 'Continuously/On an hourly basis'),
-            (2, 'Several times per day'),
-            (3, 'Once per day'),
-            (4, 'Several times per week'),
-            (5, 'Once per week'),
-            (6, 'Less often than once per week')
+            (1, 'Continuamente/Cada hora'),
+            (2, 'Varias veces al día'),
+            (3, 'Una vez al día'),
+            (4, 'Varias veces a la semana'),
+            (5, 'Una vez a la semana'),
+            (6, 'Menos de una vez a la semana')
         ]
     )
 
     online_purchase = models.IntegerField(
-        label = 'When buying products and services related to traveling (airplane / train tickets, hotel booking, travel'
-                ' packages, etc.) Do you often use the internet for this purpose?',
+        label = 'Cuando compra productos y servicios relacionados con los viajes (tiquetes de tren / avion, reservas de'
+                ' hoteles, paquetes turisticos, etc.) ¿Que tan seguido usa internet para este propósito?',
         choices = [
             (0, 'No'),
-            (1, 'Yes')
+            (1, 'Si')
         ]
     )
