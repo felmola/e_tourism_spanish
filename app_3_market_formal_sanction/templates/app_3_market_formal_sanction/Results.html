@@ -18,7 +18,11 @@
         <tbody>
             <tr>
                 <td>Rol</td>
-                <td>{{ role }}</td>
+                {% if player.role == "buyer" %}
+                <td>Comprador</td>
+                {% else %}
+                <td>Vendedor</td>
+                {% endif %}
             </tr>
             <tr>
                 <td>Su código es</td>
@@ -45,7 +49,7 @@
             </tr>
 
     {% else %}
-            <p>Usted se demoró mucho en tomar una decisión. Por esta razón, sus ganancias en este periodo de negociación son de 0 UME.<br> </p>
+            <p>Usted se demoró mucho en tomar una decisión. Por esta razón, sus ganancias en este periodo de negociación son de {{ Constants.endowment|c }}.<br> </p>
     {% endif %}
 {% else %}
             {% if player.sold == False %}

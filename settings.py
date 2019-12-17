@@ -34,7 +34,7 @@ SESSION_CONFIGS = [
     dict(
         name='e_tourism_market_informal_sanction',
         display_name="Market Informal Sanction",
-        num_demo_participants=20,
+        num_demo_participants=2,
         app_sequence=['app_0_consent', 'app_4_market_informal', 'app_8_summary', 'app_7_question', 'app_9_report'],
         use_browser_bots=False,
     ),
