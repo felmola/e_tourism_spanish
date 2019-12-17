@@ -54,7 +54,7 @@
                     <div class="card border-dark mb-3" style="max-width: 18rem;">
                         <h3 class="card-header">{{p.get_seller_package_display}}</h3>
                         <div class="card-body text-dark">
-                            <h5 class="card-title">{{p.ask_price_fin}} </h5>
+                            <h5 class="card-title">{{p.ask_price_fin|c}} </h5>
                             <br>
                             <button name = "my_seller" value = {{p.id_in_group}} class = "btn btn-primary btn-large">Comprar</button>
                         </div>

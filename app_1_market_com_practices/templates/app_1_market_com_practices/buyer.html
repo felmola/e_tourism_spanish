@@ -94,7 +94,7 @@ $(document).ready(function() {
                         <h3 class="card-header">{{p.get_seller_package_display}}</h3>
                         <div class="card-body text-dark">
                             {% if p.com_practice == 1 %}
-                            <h5 class="card-title">{{p.ask_price_fin}} </h5>
+                            <h5 class="card-title">{{p.ask_price_fin|c}} </h5>
                             <br>
                             <p class="card-text">Mejor precio garantizado</p>
                             {% elif p.com_practice == 2 %}
@@ -107,10 +107,10 @@ $(document).ready(function() {
                             <h5 class="card-title">{{p.ask_price_fin|c}} </h5>
                             {% elif p.com_practice == 4 %}
                             <h5 class="card-title">
-                               {{ p.drip|c}} <a href = # data-toggle="tooltip" title = "Precio total = {{p.drip|c}} + 1 UME  ={{p.ask_price_fin}}" data-original-title="Default tooltip">*</a>
+                               {{ p.drip|c}} <a href = # data-toggle="tooltip" title = "Precio total = {{p.drip|c}} + 1 UME  ={{p.ask_price_fin|c}}" data-original-title="Default tooltip">*</a>
                             </h5>
                             {% else %}
-                            <h5 class="card-title">{{p.ask_price_fin}} </h5>
+                            <h5 class="card-title">{{p.ask_price_fin|c}} </h5>
                             {% endif %}
                             <hr class="my-4">
                             <button name = "my_seller" value = {{p.id_in_group}} class = "btn btn-primary btn-large">Comprar</button>
