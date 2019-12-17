@@ -10,6 +10,47 @@
 {% endblock %}
 
 {% block content %}
+<script>
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+</script>
+{% comment %} info de tooltip: https://www.w3schools.com/css/css_tooltip.asp {% endcomment %}
+<style>
+    .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+</style>
+
+
     {% if player.role == "seller" %}
     <p>Usted fue asignado al rol de vendedor. Recuerde que usted tendrá este rol asignado durante los 5 periodos de
         negociación. Usted podrá vender solo un paquete turístico por cada periodo de negociación. El computador le
@@ -253,7 +294,7 @@
                     <div class="card border-dark mb-3" style="max-width: 18rem;">
                         <h3 class="card-header">Roma</h3>
                         <div class="card-body text-dark">
-                            <h5 class="card-title"> 79 UME*</h5>
+                            <h5 class="card-title"> 79 UME<a href = # data-toggle="tooltip" title = "Precio total = {{p.drip|c}} + 1 UME  ={{p.ask_price_fin}}" data-original-title="Default tooltip">*</a></h5>
                             <br>
                             <br>
                             <hr class="my-4">
