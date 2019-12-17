@@ -8,7 +8,7 @@ class questionnaire_intro(Page):
 
 class questionnaire(Page):
     form_model = 'player'
-    form_fields = ['gender', 'age', 'country', 'education', 'civil_status', 'income', 'online_frequency', 'online_purchase']
+    form_fields = ['gender', 'age', 'country', 'education', 'civil_status', 'income', 'online_frequency']
 
 page_sequence = [
     questionnaire_intro,

@@ -14,6 +14,5 @@ class PlayerBot(Bot):
                                         education = random.randint (1, 6),
                                         civil_status = random.randint (1, 5),
                                         income = random.randint (1, 6),
-                                        online_frequency = random.randint (1, 6),
-                                        online_purchase = random.randint (0 ,1),
+                                        online_frequency = random.randint (1, 6)
                                         )
